@@ -8,11 +8,11 @@ function autoScroll() {
   scrollAmount += scrollSpeed;
   if (scrollAmount >= maxScroll) {
     scrollAmount = 0;
-    logosContainer.style.transition = 'none'; // отключаем анимацию для мгновенного перехода
-    logosContainer.style.transform = `translateX(0)`; // возвращаем в начало
+    logosContainer.style.transition = 'none'; 
+    logosContainer.style.transform = `translateX(0)`; 
     setTimeout(() => {
-      logosContainer.style.transition = 'transform 0.5s linear'; // восстанавливаем анимацию
-    }, 5); // небольшая задержка, чтобы анимация восстановилась
+      logosContainer.style.transition = 'transform 0.5s linear'; 
+    }, 5); 
   }
   logosContainer.style.transform = `translateX(-${scrollAmount}px)`;
 }
@@ -24,7 +24,7 @@ logosContainer.addEventListener("mouseleave", () => {
   interval = setInterval(autoScroll, 50);
 });
 
-// Для кнопки прокрутки
+
 document.getElementById("scrollRight").addEventListener("click", () => {
   scrollAmount += 100;
   if (scrollAmount >= maxScroll) {
@@ -43,3 +43,6 @@ window.addEventListener('scroll', function() {
     header.classList.remove('shrunk');
   }
 });
+
+
+
