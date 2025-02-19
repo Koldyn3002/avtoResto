@@ -1,5 +1,4 @@
-
-
+html,
 body {
   font-family: "Arial", "Source Sans Pro";
   line-height: 1.6;
@@ -12,143 +11,180 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: hidden; /* Чтобы не было горизонтального скролла */
 }
 
 header {
   display: flex;
-  position: sticky;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
-  margin: 0;
+  padding: 2vh 5vw;
   background-color: #fff;
-  border-bottom: 1px solid #f3efef;
-  top: 0;
-  max-width: 100%;
-  width: 100%; 
-  z-index: 1000; 
-  transition: all 0.2s ease; 
+  border-bottom: 0.2vh solid #f3efef;
+  height: 150px;
 }
 
-header.shrunk {
-  padding: 5px 100px;
-  height: 50px;
-}
-
-header.shrunk .logo img {
-  height: 64px;
-  margin-top: 11px;
-}
-
-header.shrunk ul {
+.logo {
   display: flex;
-  align-items: center; 
-  margin-top: 10px;
-  margin-left: 600px;
-  list-style: none;
-  gap: 75px;
+  transform: translate(0px, 30px); /* 10px вправо, -5px вверх */
 }
 
-header.shrunk ul li a {
-  font-size: 16px;
-}
-
-header.shrunk .address {
-  visibility: hidden; 
-}
-
-header.shrunk .phone {
+.header-main {
   display: flex;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-right: -690px;
+  gap: 30px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
 
-header.shrunk .contacts .icons {
+.contact-section {
   display: flex;
-  margin-top: 10px;
-  margin-right: 400px;
+  flex-direction: row;
 }
 
-header .logo img {
-
-  height: 64px;
-  margin-left: 200px;
-  margin-top: 15px;
-}
-
-header .address {
+.contacts {
   display: flex;
-  position: absolute;
-  text-align: center;
-  font-size: 16px;
-  color: #404040;
-  margin-left: 650px;
-  margin-top: -30px;
+  align-items: center;
+  gap: 1.5vw;
 }
 
 .phone {
   display: flex;
-  font-size: 16px;
-  color: #333;
-  margin-right: -780px;
-  margin-top: -30px;
+  transform: translate(190px, 50px); /* 10px вправо, -5px вверх */
 }
 
-header .contacts .icons {
-  gap: 30px;
-  margin-right: 400px;
-  margin-top: -25px;
-}
-
-header .contacts .icons img {
-  height: 25px;
-}
-
-header ul {
+.address {
   display: flex;
-  position: absolute;
+  transform: translate(-190px, 40px); /* 10px вправо, -5px вверх */
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  transform: translate(200px, 40px); /* 10px вправо, -5px вверх */
+}
+
+.icons img {
+  height: 30px;
+}
+
+.menu-section ul {
+  display: flex;
   list-style: none;
-  gap: 150px;
-  margin-left: 650px;
-  margin-top: 55px;
+  gap: 170px;
+  padding: 0;
+  margin: 0;
 }
 
-header ul li a {
-  color: #333;
+.menu-section ul li a {
   text-decoration: none;
+  color: #333;
   font-size: 24px;
-  transition: color 0.3s ease-in-out;
 }
 
-header ul li a[style*="color: red"] {
-  font-size: 28px; 
-  font-weight: bold; 
+/* Для экранов до 1280px (ноутбуки) */
+@media (max-width: 1280px) {
+  .address {
+    display: none; /* Убираем адрес */
+  }
+
+  .menu-section ul {
+    gap: 50px;
+  }
 }
 
-header ul li a:hover {
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.40); 
+/* Для экранов до 1024px (планшеты) */
+@media (max-width: 1024px) {
+  header {
+    flex-wrap: wrap;
+    padding: 15px;
+    height: auto;
+  }
+
+  .logo,
+  .phone,
+  .icons {
+    display: none; /* Убираем логотип, номер телефона и иконки */
+  }
+
+  .contact-section {
+    order: 2;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .menu-section {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-section ul {
+    gap: 30px;
+  }
+}
+
+/* Для экранов до 768px (мобильные телефоны) */
+@media (max-width: 768px) {
+  .menu-section ul {
+    gap: 20px;
+  }
+
+  .menu-section ul li a {
+    font-size: 18px;
+  }
+}
+
+/* Для экранов до 480px (маленькие смартфоны) */
+@media (max-width: 480px) {
+  .menu-section ul {
+    gap: 10px;
+  }
+
+  .menu-section ul li a {
+    font-size: 16px;
+  }
+}
+
+.content-section {
+  margin: 80px 80px;
+}
+
+main {
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-align-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 0;
+  flex: 1;
 }
 
 .intro {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  margin: 180px 40px;
-  text-align: left;
+  align-items: stretch; /* Выравниваем блоки по высоте */
   gap: 30px;
-  flex-wrap: wrap;
+   /* Позволит блокам переноситься на новую строку при малых экранах */
 }
 
 .intro-block {
+  display: flex;
+  flex-direction: column; /* Контент располагается вертикально */
+  justify-content: space-between; /* Разделяем заголовок и текст */
+  align-items: flex-start; /* Выравнивание текста по левому краю */
   background-color: #ef3b391a;
-  padding: 100px;
+  padding: 5vw; /* Отступы адаптивные */
   border-radius: 40px;
-  width: 45%;
-  max-width: 470px;
-  position: relative;
-  background-position: 290px 50%;
-  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 470px; /* Чтобы блоки не были слишком широкими */
+  min-height: auto; /* Позволит блоку адаптироваться к контенту */
+  flex-grow: 1; /* Блоки будут занимать равное пространство */
 }
 
 .intro-block:first-child:hover {
@@ -164,16 +200,21 @@ header ul li a:hover {
   color: #fff;
 }
 
-.intro-block:first-child h2 {
-  color: #fff;
+
+.intro-block h2 {
+  font-size: clamp(24px, 5vw, 40px); /* Заголовок адаптивный */
+  margin-bottom: 20px;
 }
 
-.intro-block:first-child p {
-  color: #f0f0f0;
+.intro-block p {
+  font-size: clamp(16px, 2vw, 20px); /* Текст тоже адаптируется */
+  margin: 0;
 }
 
-.intro-block:first-child .arrow {
-  color: #fff;
+.intro-block .arrow {
+  font-size: clamp(30px, 5vw, 50px); /* Адаптивный размер стрелки */
+  position: relative;
+  align-self: flex-end; /* Стрелка выравнивается справа */
 }
 
 .intro-block h2 {
@@ -182,6 +223,14 @@ header ul li a:hover {
   font-weight: 600;
   color: #0c0c0c;
 }
+.intro-block:first-child h2 {
+  color: #fff; /* Белый цвет текста */
+}
+
+.intro-block:first-child h1 span {
+  color: #ff0000; /* Красный цвет для слова "для" */
+}
+
 
 .intro-block span {
   font-weight: bold;
@@ -192,7 +241,6 @@ header ul li a:hover {
   margin: -10px 0;
   font-weight: 400;
   font-size: 20px;
-  
 }
 
 .intro-block .arrow {
@@ -213,36 +261,32 @@ header ul li a:hover {
 
 .partners {
   text-align: center;
-  margin: 120px 30px;
-  top: 800px;
-  left: 240px;
-  position: absolute;
+  margin-top: 80px; /* Отступы сверху/снизу 10vh, по бокам 5vw */
+  position: relative; /* Вместо absolute, чтобы блок не был привязан к экрану */
 }
 
 .partners .logos-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 1400px;
+  max-width: 90vw; /* Максимальная ширина 90% от ширины экрана */
 }
 
 .partners .logos {
   display: flex;
-  gap: 120px;
+  gap: 5vw; /* Промежуток между логотипами 5vw */
   flex-wrap: nowrap;
+  justify-content: center; /* Центрирование логотипов */
 }
 
-
 .partners .logos img {
-  display: flex;
-  height: 70px;
-  width: 100px;
+  height: 3vw; /* Высота логотипа пропорциональна ширине экрана */
+  width: auto; /* Ширина зависит от пропорций изображения */
   object-fit: contain;
   background-color: #b08888;
-  padding: 20px;
-  border-radius: 10px;
-  aspect-ratio: 2 / 1; 
-
+  padding: 2vw; /* Отступы внутри логотипа */
+  border-radius: 1vw; /* Скругленные углы */
+  aspect-ratio: 2 / 1; /* Пропорции логотипов */
 }
 
 .partners .arrow2 {
@@ -251,10 +295,10 @@ header ul li a:hover {
   align-items: center;
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: -2vw; /* Расстояние от правого края 2vw */
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 4vw; /* Ширина кнопки стрелки */
+  height: 4vw; /* Высота кнопки стрелки */
   border-radius: 50%;
   background-color: #b08888;
   border: none;
@@ -268,138 +312,23 @@ header ul li a:hover {
 }
 
 footer {
-  background-color: #2e0e0e;
-  color: #ffffff;
-  padding: 10px 0;
-  text-align: center;
-  margin-top: 10px; /* Отступ 100px от блока партнеров */
+  background-color: #2e0e0e; /* Темный фон футера */
+  width: 100vw; /* Ширина на весь экран */
+  height: 16vh; /* Высота футера (примерно 310px для 1920px экрана) */
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 .footer-container {
   width: 100%;
- 
-
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding-bottom: 100px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.footer-logo-container {
-  position: relative;
-  display: inline-block;
-  top: -200px;
-  left: -500px;
-}
-
-.footer-logo-container .click-text {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.footer-logo-container:hover .click-text {
-  opacity: 1;
-}
-
-.footer-info {
-  text-align: center;
-}
-
-.footer-info .address,
-.footer-info .phone {
-  font-size: 16px;
-  margin: 20px 0;
-  color: #f0f0f0;
-}
-
-.footer-contacts a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px; /* Размер кнопки */
-  height: 50px;
-  background-color: white;
-  border-radius: 50%; /* Делаем круглым */
-  transition: all 0.3s ease;
-}
-
-.footer-contacts img {
-  height: 28px;
-}
-
-.footer-contacts a:hover {
-  background-color: rgb(207, 204, 204);
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Свечение */
-  transform: scale(1.1); /* Увеличение */
-}
-
-.footer-nav {
-  margin-top: 20px;
-}
-
-.footer-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 0;
-}
-
-.footer-nav ul li a {
+  padding: 2vh 0; /* Вертикальные отступы */
   color: #ffffff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.footer-nav ul li a:hover {
-  color: #ffcc00;
-}
-
-.red-link {
-  color: red;
-  font-weight: bold;
 }
 
 .footer-bottom {
-  margin-top: 20px;
-  font-size: 14px;
+  text-align: center;
+  font-size: 1vw;
+  margin-top: 2vh;
   opacity: 0.7;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  30% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  70% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-footer:hover .footer-logo {
-  animation: bounce 0.6s ease-out 1;
 }
