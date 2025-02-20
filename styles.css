@@ -77,7 +77,7 @@ header {
 }
 
 .address {
-  transform: translate(-2vw, 2.5vh);
+  transform: translate(-7vw, 2.5vh);
   font-style: normal;
 }
 
@@ -127,17 +127,21 @@ header {
   color: var(--color-accent) !important;
   font-weight: 800 !important;
   font-size: 32px !important;
+  margin-top: -5px;
+  vertical-align: baseline;
+  transform: translateY(2px);
+
 }
 
 .content-section {
-  margin: var(--spacing-lg);
+  margin: 100px;
 }
 
 .intro {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 100px;
 }
 
 .intro-block {
@@ -193,8 +197,8 @@ header {
 
 .partners {
   max-width: 1432px;
-  margin: var(--spacing-lg) auto;
-  padding: 0 var(--spacing-md);
+  margin: 100px auto; /* Отступы сверху и снизу */
+  padding: 0 20px;
 }
 
 .logos-container {
