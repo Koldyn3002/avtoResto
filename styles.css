@@ -71,6 +71,8 @@ header {
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   height: 100%;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center;
 }
 
 .header-main {
@@ -82,7 +84,7 @@ header {
 
 .logo {
   position: absolute;
-  transform: translate(5vw, 6vh);
+  transform: translate(1vw, 6vh);
 }
 
 .contact-section {
@@ -94,7 +96,7 @@ header {
 
 .address {
   font-size: 16px;
-  transform: translate(-1vw, 2.5vh);
+  transform: translate(1.5vw, 2.5vh);
   font-style: normal;
   font-weight: 300;
   color: #404040;
@@ -102,19 +104,18 @@ header {
 }
 
 .phone {
-  transform: translate(17vw, 2.5vh);
+  transform: translate(20vw, 2.5vh);
   text-decoration: none;
   color: var(--color-text);
   font-size: 20px;
   font-weight: 400;
   font-weight: bold;
-
 }
 
 .icons {
   display: flex;
   gap: 10px;
-  transform: translate(18vw, 2.5vh);
+  transform: translate(21vw, 2.5vh);
 }
 
 .icons img {
@@ -129,9 +130,9 @@ header {
 .menu-section ul {
   display: flex;
   justify-content: flex-end;
-  gap: 170px;
+  gap: 165px;
   list-style: none;
-  padding-right: 250px;
+  padding-right: 210px;
   align-items: center;
   transform: translate(9vw, 0.5vh);
 }
@@ -146,7 +147,7 @@ header {
 }
 
 .menu-section a:hover {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.3);
 }
 
 .accent-link {
@@ -160,7 +161,6 @@ header {
 
 .header-scrolled {
   height: 80px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-scrolled .menu-section ul {
@@ -177,7 +177,7 @@ header {
 }
 
 .header-scrolled .logo {
-  transform: translate(4vw, 1.5vh);
+  transform: translate(1vw, 1.5vh);
 }
 
 .header-scrolled .address {
@@ -188,19 +188,19 @@ header {
   transform: translate(26vw, 2.5vh);
   font-size: 20px;
   font-weight: bold;
-  
 }
 
 .header-scrolled .icons {
   transform: translate(27vw, 2.8vh);
 }
 
+
 /* ========== Intro Section ========== */
 .intro {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  max-width: 1440px;
+  max-width: 1540px;
   margin: 0 auto 100px;
   padding: 0 100px;
 }

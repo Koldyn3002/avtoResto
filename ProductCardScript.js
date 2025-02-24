@@ -1,23 +1,29 @@
-// Получаем все миниатюры
-const thumbnails = document.querySelectorAll('.thumbnails .thumbnail');
-
-// Для каждой миниатюры добавляем обработчик события
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', function() {
-        // Находим элемент с классом main-image
-        const mainImage = document.getElementById('mainImage');
-        // Меняем src у mainImage на соответствующий data-main-img
-        mainImage.src = this.getAttribute('data-main-img');
-    });
+// Добавляем обработчик скролла
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  const address = document.querySelector('.address');
+  
+  if (window.scrollY > 100) { // Когда проскроллили больше 100px
+    header.classList.add('header-scrolled');
+    address.classList.add('address-hidden');
+  } else {
+    header.classList.remove('header-scrolled');
+    address.classList.remove('address-hidden');
+  }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const thumbnails = document.querySelectorAll('.thumbnail-list img');
+  const mainImage = document.getElementById('mainImage');
 
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('shrunk');
-    } else {
-      header.classList.remove('shrunk');
-    }
+  thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+          // Убираем активный класс у всех миниатюр
+          thumbnails.forEach(t => t.classList.remove('active'));
+          // Добавляем активный класс кликнутой миниатюре
+          this.classList.add('active');
+          // Меняем основное изображение
+          mainImage.src = this.src;
+      });
   });
-  console.log('Файл secondPage.js загружен');
+});
