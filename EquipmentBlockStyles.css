@@ -9,7 +9,7 @@
 }
 
 .address {
-  margin-right: 10px; /* Добавляем отступ слева */
+  margin-right: 10px; 
 }
 
 body {
@@ -61,8 +61,8 @@ body {
   display: grid;
   grid-template-rows: auto auto auto 1fr;
   height: 100%;
-  min-height: 500px; /* Увеличиваем минимальную высоту карточки */
-  padding-bottom: 80px; /* Добавляем отступ снизу для кнопки */
+  min-height: 500px; 
+  padding-bottom: 80px; 
 }
 
 .equipment-item img {
@@ -103,7 +103,7 @@ body {
   padding: 0;
   margin: 20px 0 0 0;
   color: #2E0E0E;
-  margin-bottom: 20px; /* Добавляем отступ снизу для списка */
+  margin-bottom: 20px; 
 }
 
 .equipment-item ul li {
@@ -128,14 +128,14 @@ body {
   left: 30px;
   background: #FF0000;
   color: white;
-  width: 60px; /* Фиксированная ширина */
-  height: 25px; /* Фиксированная высота */
+  width: 60px; 
+  height: 25px; 
   border-radius: 4px;
-  font-size: 24px; /* Увеличенный размер шрифта */
+  font-size: 24px; 
   font-weight: 600;
-  display: flex; /* Добавляем flex для центрирования */
-  align-items: center; /* Центрируем по вертикали */
-  justify-content: center; /* Центрируем по горизонтали */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
 .btn {
   display: none;

@@ -1,4 +1,4 @@
-// Добавляем обработчик скролла
+// обработчик скролла
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const address = document.querySelector('.address');
